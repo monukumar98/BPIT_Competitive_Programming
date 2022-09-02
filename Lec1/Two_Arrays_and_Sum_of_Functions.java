@@ -1,4 +1,4 @@
-package Lec_1;
+package Lec1;
 
 import java.util.*;
 

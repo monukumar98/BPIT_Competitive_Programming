@@ -1,4 +1,4 @@
-package Lec_1;
+package Lec1;
 
 public class Median_of_Two_Sorted_Arrays {
 
