@@ -8,13 +8,16 @@ public class Palindrome_Partitioning {
 		// TODO Auto-generated method stub
 		String str = "nitin";
 		List<String> list = new ArrayList<>();
-		PalindromePartitioning(str, list);
+		List<List<String>> ans = new ArrayList<>();
+		PalindromePartitioning(str, list, ans);
+		System.out.println(ans);
 
 	}
 
-	public static void PalindromePartitioning(String ques, List<String> list) {
+	public static void PalindromePartitioning(String ques, List<String> list, List<List<String>> ans) {
 		if (ques.length() == 0) {
-			System.out.println(list);
+			//System.out.println(list);
+			ans.add(new ArrayList<>(list));
 			return;
 		}
 		for (int i = 1; i <= ques.length(); i++) {
@@ -22,7 +25,8 @@ public class Palindrome_Partitioning {
 			if (isPalindrome(s) == true) {
 
 				list.add(s);
-				PalindromePartitioning(ques.substring(i), list);
+				PalindromePartitioning(ques.substring(i), list, ans);
+				list.remove(list.size() - 1);
 			}
 		}
 
